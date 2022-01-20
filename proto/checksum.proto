@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package ="redbelly.grpcrace";
+package proto;
+
+service ChecksumService {
+    rpc Checksum(CheckRequest) returns (CheckResponse) {};
+}
+
+message CheckRequest {
+    string payload = 1;
+}
+
+message CheckResponse {
+    string sum = 1;
+    int32 size = 2;
+}
